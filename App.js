@@ -20,8 +20,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-import  RNCamera  from 'react-native-camera';
-// import QRCodeScanner from 'react-native-qrcode-scanner';
+// import  RNCamera  from 'react-native-camera';
+import QRCodeScanner from 'react-native-qrcode-scanner';
 
 
 export default class App extends Component {
@@ -139,10 +139,10 @@ export default class App extends Component {
     return (
       <View style={{flex:1}}>
         <View style={{flex:1}}>
-            <Text style={styles.welcome}>No records</Text>
+            <Text style={styles.welcome}>QR and Barcode Scanner</Text>
             <Button title={'Snap'} onPress={()=>{this.clickIt()}}/>
         </View>
-        {/* <QRCodeScanner
+        <QRCodeScanner
           onRead={this.onSuccess.bind(this)}
           ref={(node) => { this.scanner = node }}
           topContent={
@@ -155,8 +155,8 @@ export default class App extends Component {
               <Text style={styles.buttonText}>OK. Got it!</Text>
             </TouchableOpacity>
           }
-        /> */}
-        <RNCamera
+        />
+        {/* <RNCamera
           ref={ref => {
             this.camera = ref;
           }}
@@ -183,7 +183,7 @@ export default class App extends Component {
             Alert.alert("textRecog detected");
           }}
 
-        />
+        /> */}
       </View>
     );
   }
